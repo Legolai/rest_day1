@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 public class FacadeExampleTest {
 
     private static EntityManagerFactory emf;
-    private static FacadeExample facade;
+    private static PersonDao facade;
 
     public FacadeExampleTest() {
     }
@@ -24,7 +24,7 @@ public class FacadeExampleTest {
     @BeforeAll
     public static void setUpClass() {
        emf = EMF_Creator.createEntityManagerFactoryForTest();
-       facade = FacadeExample.getFacadeExample(emf);
+       facade = PersonDao.getInstance(emf);
     }
 
     @AfterAll
@@ -54,11 +54,11 @@ public class FacadeExampleTest {
 //        Remove any data after each test was run
     }
 
-    // TODO: Delete or change this method 
-    @Test
-    public void testAFacadeMethod() throws Exception {
-        assertEquals(2, facade.getRenameMeCount(), "Expects two rows in the database");
-    }
+//    // TODO: Delete or change this method
+//    @Test
+//    public void testAFacadeMethod() throws Exception {
+//        assertEquals(2, facade.getPersonCount(), "Expects two rows in the database");
+//    }
     
 
 }
